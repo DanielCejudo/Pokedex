@@ -48,12 +48,16 @@ h1.title {
 
 /* Mostrar el contenido cuando el radio está seleccionado */
 #tab-charizard:checked ~ label[for="tab-charizard"],
-#tab-bulbasaur:checked ~ label[for="tab-bulbasaur"] {
+#tab-bulbasaur:checked ~ label[for="tab-bulbasaur"],
+#tab-pikachu:checked ~ label[for="tab-pikachu"],
+#tab-squirtle:checked ~ label[for="tab-squirtle"] {
   background-color: #e03e00;
 }
 
 #tab-charizard:checked ~ .content.charizard,
-#tab-bulbasaur:checked ~ .content.bulbasaur {
+#tab-bulbasaur:checked ~ .content.bulbasaur,
+#tab-pikachu:checked ~ .content.pikachu,
+#tab-squirtle:checked ~ .content.squirtle {
   display: block;
 }
 
