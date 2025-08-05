@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.pokedex {
+  background-color: white;
+  border-radius: 20px;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pokedex:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.pokemon-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.info h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.info span {
+  font-weight: normal;
+  font-size: 16px;
+  color: #777;
+}
+
+.info p {
+  margin: 5px 0;
+}
+
+.description, .evolution, .stats {
+  margin-top: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  gap: 10px;
+}
+
+.stat span {
+  font-weight: 600;
+}
+
+.stat span.percent {
+  width: 40px;  /* espacio para el porcentaje */
+  text-align: right;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Barras vacías inicialmente */
+.stat .bar {
+  height: 10px;
+  background: linear-gradient(to right, orange, red);
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.7s ease;
+}
+
+/* Cuando el mouse está sobre .pokedex, las barras se llenan */
+.pokedex:hover .bar.hp    { width: 78%; }
+.pokedex:hover .bar.atk   { width: 84%; }
+.pokedex:hover .bar.def   { width: 78%; }
+.pokedex:hover .bar.speed { width: 100%; }
