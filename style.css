@@ -2,83 +2,120 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: #f8f8f8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 40px;
 }
-
-.pokedex {
-  background-color: white;
-  border-radius: 20px;
-  max-width: 400px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
+h1.title {
+  margin-bottom: 20px;
 }
 
-.pokedex:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+/* Tabs */
+.tabs {
+  width: 400px;
+}
+.tabs input[type="radio"] {
+  display: none;
+}
+.tabs label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 5px;
+  background-color: #ff4500;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+.tabs label:hover {
+  background-color: #e03e00;
+}
+
+/* Contenido */
+.content {
+  background-color: white;
+  border-radius: 0 20px 20px 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: none;
+}
+
+/* Mostrar el contenido cuando el radio está seleccionado */
+#tab-charizard:checked ~ label[for="tab-charizard"],
+#tab-bulbasaur:checked ~ label[for="tab-bulbasaur"] {
+  background-color: #e03e00;
+}
+
+#tab-charizard:checked ~ .content.charizard,
+#tab-bulbasaur:checked ~ .content.bulbasaur {
+  display: block;
+}
+
+/* Estilos ficha igual que antes */
+.pokedex {
+  max-width: 400px;
+  cursor: default;
 }
 
 .pokemon-image img {
   width: 100%;
   border-radius: 10px;
 }
-
 .info h1 {
   margin-bottom: 10px;
   font-size: 28px;
 }
-
 .info span {
   font-weight: normal;
   font-size: 16px;
   color: #777;
 }
-
 .info p {
   margin: 5px 0;
 }
-
 .description, .evolution, .stats {
   margin-top: 20px;
 }
-
+.stats h2 {
+  margin-bottom: 10px;
+}
 .stat {
   display: flex;
   align-items: center;
   margin: 6px 0;
   gap: 10px;
 }
-
 .stat span {
   font-weight: 600;
 }
-
 .stat span.percent {
-  width: 40px;  /* espacio para el porcentaje */
+  width: 40px;
   text-align: right;
   font-weight: 600;
   color: #333;
 }
-
-/* Barras vacías inicialmente */
 .stat .bar {
   height: 10px;
   background: linear-gradient(to right, orange, red);
   border-radius: 5px;
   width: 0%;
   transition: width 0.7s ease;
+  flex-grow: 1;
 }
 
-/* Cuando el mouse está sobre .pokedex, las barras se llenan */
-.pokedex:hover .bar.hp    { width: 78%; }
-.pokedex:hover .bar.atk   { width: 84%; }
-.pokedex:hover .bar.def   { width: 78%; }
-.pokedex:hover .bar.speed { width: 100%; }
+/* Animar barras con hover en contenido visible */
+.content.charizard:hover .bar.hp    { width: 78%; }
+.content.charizard:hover .bar.atk   { width: 84%; }
+.content.charizard:hover .bar.def   { width: 78%; }
+.content.charizard:hover .bar.speed { width: 100%; }
+
+.content.bulbasaur:hover .bar.hp    { width: 45%; }
+.content.bulbasaur:hover .bar.atk   { width: 49%; }
+.content.bulbasaur:hover .bar.def   { width: 49%; }
+.content.bulbasaur:hover .bar.speed { width: 45%; }

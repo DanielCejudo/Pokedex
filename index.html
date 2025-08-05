@@ -4,54 +4,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Charizard - Pokédex Animada</title>
+  <title>Pokédex Animada sin JS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="pokedex">
-    <div class="pokemon-image">
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard" />
-    </div>
-    <div class="info">
-      <h1>Charizard <span>#006</span></h1>
-      <p><strong>Tipo:</strong> Fuego / Volador</p>
-      <p><strong>Altura:</strong> 1.7 m</p>
-      <p><strong>Peso:</strong> 90.5 kg</p>
-      <p><strong>Habilidad:</strong> Mar Llamas</p>
-    </div>
-    <div class="description">
-      <p>Charizard escupe fuego tan caliente que puede derretir rocas. Se sabe que provoca incendios forestales sin
-        querer.</p>
-    </div>
-    <div class="evolution">
-      <h2>Evolución</h2>
-      <p>Charmander → Charmeleon → <strong>Charizard</strong></p>
-    </div>
-    <div class="stats">
-      <h2>Estadísticas base</h2>
-      <div class="stat">
-        <span>HP</span>
-        <div class="bar hp"></div>
-        <span class="percent">78%</span>
+
+  <h1 class="title">Pokédex Animada sin JavaScript</h1>
+
+  <div class="tabs">
+    <input type="radio" id="tab-charizard" name="tab" checked />
+    <label for="tab-charizard">Charizard</label>
+
+    <input type="radio" id="tab-bulbasaur" name="tab" />
+    <label for="tab-bulbasaur">Bulbasaur</label>
+
+    <div class="content charizard">
+      <div class="pokedex">
+        <div class="pokemon-image">
+          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard" />
+        </div>
+        <div class="info">
+          <h1>Charizard <span>#006</span></h1>
+          <p><strong>Tipo:</strong> Fuego / Volador</p>
+          <p><strong>Altura:</strong> 1.7 m</p>
+          <p><strong>Peso:</strong> 90.5 kg</p>
+          <p><strong>Habilidad:</strong> Mar Llamas</p>
+        </div>
+        <div class="description">
+          <p>Charizard escupe fuego tan caliente que puede derretir rocas. Se sabe que provoca incendios forestales sin
+            querer.</p>
+        </div>
+        <div class="evolution">
+          <h2>Evolución</h2>
+          <p>Charmander → Charmeleon → Charizard</p>
+        </div>
+        <div class="stats">
+          <h2>Estadísticas base</h2>
+          <div class="stat">
+            <span>HP</span>
+            <div class="bar hp"></div>
+            <span class="percent">78%</span>
+          </div>
+          <div class="stat">
+            <span>Ataque</span>
+            <div class="bar atk"></div>
+            <span class="percent">84%</span>
+          </div>
+          <div class="stat">
+            <span>Defensa</span>
+            <div class="bar def"></div>
+            <span class="percent">78%</span>
+          </div>
+          <div class="stat">
+            <span>Velocidad</span>
+            <div class="bar speed"></div>
+            <span class="percent">100%</span>
+          </div>
+        </div>
       </div>
-      <div class="stat">
-        <span>Ataque</span>
-        <div class="bar atk"></div>
-        <span class="percent">84%</span>
-      </div>
-      <div class="stat">
-        <span>Defensa</span>
-        <div class="bar def"></div>
-        <span class="percent">78%</span>
-      </div>
-      <div class="stat">
-        <span>Velocidad</span>
-        <div class="bar speed"></div>
-        <span class="percent">100%</span>
+    </div>
+
+    <div class="content bulbasaur">
+      <div class="pokedex">
+        <div class="pokemon-image">
+          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur" />
+        </div>
+        <div class="info">
+          <h1>Bulbasaur <span>#001</span></h1>
+          <p><strong>Tipo:</strong> Planta / Veneno</p>
+          <p><strong>Altura:</strong> 0.7 m</p>
+          <p><strong>Peso:</strong> 6.9 kg</p>
+          <p><strong>Habilidad:</strong> Clorofila</p>
+        </div>
+        <div class="description">
+          <p>Bulbasaur tiene una semilla en su espalda que crece lentamente. Le encanta absorber luz solar para
+            fortalecer esa semilla.</p>
+        </div>
+        <div class="evolution">
+          <h2>Evolución</h2>
+          <p>Bulbasaur → Ivysaur → Venusaur</p>
+        </div>
+        <div class="stats">
+          <h2>Estadísticas base</h2>
+          <div class="stat">
+            <span>HP</span>
+            <div class="bar hp"></div>
+            <span class="percent">45%</span>
+          </div>
+          <div class="stat">
+            <span>Ataque</span>
+            <div class="bar atk"></div>
+            <span class="percent">49%</span>
+          </div>
+          <div class="stat">
+            <span>Defensa</span>
+            <div class="bar def"></div>
+            <span class="percent">49%</span>
+          </div>
+          <div class="stat">
+            <span>Velocidad</span>
+            <div class="bar speed"></div>
+            <span class="percent">45%</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
